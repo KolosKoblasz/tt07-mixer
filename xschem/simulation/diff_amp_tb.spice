@@ -6,16 +6,18 @@
 *.opin V_OUT_B_P
 *.ipin V_IN_B_N
 *.opin V_OUT_A_P
-diff_amp_A VCC VSS GND net1 net2 V_IN_A_P diff_amp
+x1 VCC VSS GND net1 net2 V_IN_A_P diff_amp
 V1 VCC GND 1.8
 V2 VSS GND 0
-diff_amp_B VCC VSS V_IN_B_N net3 net4 V_IN_B_P diff_amp
+x2 VCC VSS V_IN_B_N net3 net4 V_IN_B_P diff_amp
 R1 net2 V_OUT_A_N 500 m=1
 C1 net2 VSS 5p m=1
 R2 net1 V_OUT_A_P 500 m=1
 C2 VSS net1 5p m=1
 C3 net3 VSS 5p m=1
 R3 net3 V_OUT_B_P 500 m=1
+V3 V_IN_A_P GND 0 ac 1 0 sin(0 1m 100meg 0 0 0)
+V4 V_IN_B_P V_IN_B_N 0 ac 1 0 sin(0 1m 100meg 0 0 0)
 **** begin user architecture code
 
 ** opencircuitdesign pdks install
@@ -25,9 +27,20 @@ R3 net3 V_OUT_B_P 500 m=1
 
 
 
+.option reltol=1e-5
++  abstol=1e-14 savecurrents
 .control
-tran 100p 200n
-write diff_amp_tb.raw
+  save all
+  op
+  remzerovec
+  write diff_amp_tb.raw
+  set appendwrite
+  ac dec 10 1 1e12
+  remzerovec
+  write diff_amp_tb.raw
+  tran 0.1n 100n
+  write diff_amp_tb.raw
+
 .endc
 
 

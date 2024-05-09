@@ -5,6 +5,27 @@ K {}
 V {}
 S {}
 E {}
+B 2 130 -540 930 -140 {flags=graph
+y1=0
+y2=2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=10e-6
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=""
+color=""
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 T {Load sky 130 spice models} -290 100 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -90,6 +111,18 @@ N -570 -510 -570 -480 {
 lab=VCC}
 N -290 -460 -250 -460 {
 lab=#net1}
+N -1250 -430 -1220 -430 {
+lab=V_IN_A_P}
+N -1220 -370 -1220 -360 {
+lab=GND}
+N -1310 -220 -1220 -220 {
+lab=V_IN_B_P}
+N -1220 -220 -1220 -190 {
+lab=V_IN_B_P}
+N -1310 -120 -1220 -120 {
+lab=V_IN_B_N}
+N -1220 -130 -1220 -120 {
+lab=V_IN_B_N}
 C {devices/code.sym} -630 60 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -110,7 +143,7 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 
 "
 }
-C {diff_amp.sym} -490 -420 0 0 {name=diff_amp_A}
+C {diff_amp.sym} -490 -420 0 0 {name=x1}
 C {devices/vsource.sym} -970 -600 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/lab_pin.sym} -1000 -630 0 0 {name=p1 sig_type=std_logic lab=VCC}
 C {devices/gnd.sym} -970 -560 0 0 {name=l1 lab=GND}
@@ -121,7 +154,7 @@ C {devices/ipin.sym} -920 -430 0 0 {name=p4 lab=V_IN_A_P}
 C {devices/gnd.sym} -660 -400 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} -540 -330 0 1 {name=p5 sig_type=std_logic lab=VSS}
 C {devices/opin.sym} -160 -380 0 0 {name=p7 lab=V_OUT_A_N}
-C {diff_amp.sym} -480 -120 0 0 {name=diff_amp_B}
+C {diff_amp.sym} -480 -120 0 0 {name=x2}
 C {devices/ipin.sym} -910 -130 0 0 {name=p8 lab=V_IN_B_P}
 C {devices/lab_pin.sym} -520 -210 0 1 {name=p9 sig_type=std_logic lab=VCC}
 C {devices/lab_pin.sym} -530 -30 0 1 {name=p10 sig_type=std_logic lab=VSS}
@@ -146,9 +179,20 @@ C {devices/simulator_commands_shown.sym} -980 100 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
+.option reltol=1e-5
++  abstol=1e-14 savecurrents
 .control
-tran 100p 200n
-write diff_amp_tb.raw
+  save all
+  op
+  remzerovec
+  write diff_amp_tb.raw
+  set appendwrite
+  ac dec 10 1 1e12
+  remzerovec
+  write diff_amp_tb.raw
+  tran 0.1n 100n
+  write diff_amp_tb.raw
+
 .endc
 "}
 C {devices/res.sym} -220 -460 3 0 {name=R2
@@ -171,3 +215,13 @@ value=500
 footprint=1206
 device=resistor
 m=1}
+C {devices/vsource.sym} -1220 -400 0 0 {name=V3 value=value="0 ac 1 0
++ sin(0 1m 100meg 0 0 0)"
++ savecurrent=false}
+C {devices/lab_pin.sym} -1250 -430 2 1 {name=p3 sig_type=std_logic lab=V_IN_A_P}
+C {devices/gnd.sym} -1220 -360 0 0 {name=l4 lab=GND}
+C {devices/vsource.sym} -1220 -160 0 0 {name=V4 value=value="0 ac 1 0
++ sin(0 1m 100meg 0 0 0)"
++ savecurrent=false}
+C {devices/lab_pin.sym} -1310 -220 2 1 {name=p17 sig_type=std_logic lab=V_IN_B_P}
+C {devices/lab_pin.sym} -1310 -120 2 1 {name=p18 sig_type=std_logic lab=V_IN_B_N}
