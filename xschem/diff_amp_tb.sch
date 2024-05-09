@@ -163,8 +163,14 @@ N -580 -550 -430 -550 {
 lab=V_IN_A_P}
 N -430 -550 -380 -470 {
 lab=V_IN_A_P}
-N -380 -380 -250 -380 {
+N -380 -410 -380 -380 {
 lab=#net3}
+N -290 -440 -250 -380 {
+lab=V_IN_A_P}
+N -320 -380 -290 -380 {
+lab=VSS}
+N -320 -380 -320 -290 {
+lab=VSS}
 C {devices/code.sym} -630 60 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -225,7 +231,7 @@ value="
   ac dec 10 1e3 100e6
   remzerovec
   write diff_amp_tb.raw
-  tran 10n 100u
+  tran 10n 10u
   write diff_amp_tb.raw
 
 .endc
