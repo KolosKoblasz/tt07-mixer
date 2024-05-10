@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=5e-06
+x1=-4.2707997e-07
+x2=3.4867089e-06
 
 
 
@@ -48,7 +48,7 @@ logx=0
 logy=0
 divx=5
 hilight_wave=-1
-rawfile=$netlist_dir/diff_amp_tb.raw
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
@@ -104,8 +104,8 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-4.6390588
-y2=3.6553412
+y1=-2
+y2=2
 rainbow=1
 color="11 5"
 node="v_in_a_n
@@ -142,6 +142,35 @@ color="11 5"
 node="LO_N
 LO_P"
 x1=7.4646069e-07}
+B 2 610 -360 1160 -40 {flags=graph,unlocked
+
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=-4.2707997e-07
+x2=3.4867089e-06
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+y1=-2
+y2=+2
+
+color=12
+node="\\"v_out_a_p v_out_a_n -\\""}
 T {Load sky 130 spice models} -310 60 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
