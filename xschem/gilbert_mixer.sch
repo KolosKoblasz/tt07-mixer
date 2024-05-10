@@ -120,7 +120,7 @@ C {sky130_fd_pr/res_high_po_0p35.sym} 260 110 0 0 {name=R3
 L=0.1
 model=res_high_po_0p35
 spiceprefix=X
-mult=15}
+mult=30}
 C {devices/lab_pin.sym} 265 160 0 1 {name=p12 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -65 -230 0 0 {name=p13 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 305 -230 0 0 {name=p14 sig_type=std_logic lab=VSS}
@@ -215,16 +215,16 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/res_high_po_0p35.sym} -20 -230 0 0 {name=R2
-L=2.3
-model=res_high_po_0p35
-spiceprefix=X
-mult=1}
 C {sky130_fd_pr/res_high_po_0p35.sym} 340 -230 0 0 {name=R1
-L=2.3
+L=15.3
 model=res_high_po_0p35
 spiceprefix=X
-mult=1}
+mult=2}
 C {devices/lab_pin.sym} 260 60 1 0 {name=p18 sig_type=std_logic lab=NET_R3}
 C {devices/lab_pin.sym} 480 -10 2 0 {name=p21 sig_type=std_logic lab=NET_M6_DRAIN}
 C {devices/lab_pin.sym} 40 -10 2 1 {name=p22 sig_type=std_logic lab=NET_M5_DRAIN}
+C {sky130_fd_pr/res_high_po_0p35.sym} -20 -230 0 0 {name=R2
+L=15.3
+model=res_high_po_0p35
+spiceprefix=X
+mult=2}

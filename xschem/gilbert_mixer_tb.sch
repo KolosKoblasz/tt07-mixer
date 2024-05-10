@@ -14,7 +14,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=11.4
+x2=4.8
 
 subdivx=8
 node="\\"v_out_a_p db20()\\""
@@ -25,9 +25,9 @@ logx=1
 logy=0
 divx=5
 sweep=""
-rawfile=$netlist_dir/diff_amp_tb.raw
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=ac
-x1=-0.6}
+x1=-7.2}
 B 2 20 -360 570 -40 {flags=graph,unlocked
 
 
@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.0141483e-06
-x2=2.8996407e-06
+x1=1.1588547e-07
+x2=3.5528964e-06
 
 
 
@@ -52,24 +52,24 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2.3637226
-y2=5.5989016
+y1=-1.6003162
+y2=1.5996838
 
 color="12 7"
 node="v_out_a_n
 v_out_a_p"}
 B 2 620 130 1170 380 {flags=graph,unlocked
-rawfile=$netlist_dir/diff_amp_tb.raw
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=ac
-y1=1.1
-y2=180
+y1=215.78
+y2=394.68
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-0.6
-x2=11.4
+x1=-3.6
+x2=8.4
 
 subdivx=8
 node=ph(v_out_a_p)
@@ -89,7 +89,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=5.25e-06
+x2=2e-06
 
 
 
@@ -110,7 +110,7 @@ rainbow=1
 color="5 4"
 node="v_in_a_p
 v_in_a_n"
-x1=2.5e-07}
+x1=0}
 B 2 30 -1120 580 -800 {flags=graph,unlocked
 
 
@@ -120,7 +120,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=8.871788e-07
+x2=8.5355962e-07
 
 
 
@@ -141,7 +141,7 @@ rainbow=1
 color="11 5"
 node="LO_N
 LO_P"
-x1=5.5098692e-07
+x1=5.1736774e-07
 y1=-2}
 B 2 610 -360 1160 -40 {flags=graph,unlocked
 
@@ -151,8 +151,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.2378259e-06
-x2=7.1966736e-06
+x1=-3.2663896e-08
+x2=2.0057677e-06
 
 
 
@@ -168,7 +168,7 @@ sim_type=tran
 subdivx=3
 
 y1=-2
-y2=+2
+y2=2
 
 color=12
 node="\\"v_out_a_p v_out_a_n -\\""}
@@ -181,7 +181,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=5e-06
+x2=2e-06
 
 
 
@@ -212,7 +212,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=5e-06
+x2=2e-06
 
 
 
@@ -244,7 +244,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=6e-06
+x2=2e-06
 
 
 
@@ -265,7 +265,7 @@ rainbow=1
 color="5 4"
 node="v_in_a_p
 v_in_a_n"
-x1=1e-06}
+x1=0}
 B 2 620 -1530 1170 -1210 {flags=graph,unlocked
 
 
@@ -275,7 +275,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=4.25e-06
+x2=2e-06
 
 
 
@@ -299,7 +299,7 @@ x1.net4
 x1.net3
 x1.net2
 x1.net1"
-x1=-7.5e-07}
+x1=0}
 T {Load sky 130 spice models} -310 60 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -441,13 +441,13 @@ value="
   *ac dec 10 1e3 100e6
   *remzerovec
   *write gilbert_mixer_tb.raw
-  tran 10n 5u
+  tran 10n 2u
   write gilbert_mixer_tb.raw
 
 .endc
 "}
 C {devices/vsource.sym} -1390 -400 0 0 {name=V4 value="0 ac 1 0
-+ sin(0 1900m 1meg 0 0 0)"
++ sin(950m 100m 1meg 0 0 0)"
 }
 C {devices/lab_pin.sym} -1480 -460 2 1 {name=p17 sig_type=std_logic lab=V_IN_A_P}
 C {devices/lab_pin.sym} -1430 -360 0 0 {name=p19 sig_type=std_logic lab=VSS}
@@ -480,7 +480,7 @@ C {devices/lab_pin.sym} -740 -290 0 1 {name=p10 sig_type=std_logic lab=MIX_IN_N}
 C {devices/lab_pin.sym} -670 -440 0 0 {name=p11 sig_type=std_logic lab=MIX_IN_P}
 C {devices/lab_pin.sym} -670 -420 0 0 {name=p13 sig_type=std_logic lab=MIX_IN_N}
 C {devices/vsource.sym} -1430 -710 0 0 {name=V5 value="0 ac 1 0
-+ sin(900m 900m 10meg 0 0 0)"
++ sin(900m 900m 40meg 0 0 0)"
 }
 C {analog_inv.sym} -1320 -740 0 0 {name=x2}
 C {devices/lab_pin.sym} -1230 -660 2 1 {name=p14 sig_type=std_logic lab=VSS}
@@ -494,8 +494,8 @@ C {devices/lab_pin.sym} -980 -660 0 0 {name=p15 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -1230 -810 0 0 {name=p25 sig_type=std_logic lab=VCC}
 C {devices/lab_pin.sym} -980 -810 0 0 {name=p26 sig_type=std_logic lab=VCC}
 C {devices/vsource.sym} -1390 -250 0 0 {name=V3 value="0 ac 1 0
-+ sin(0 1900m 1meg 0 0 180)"
++ sin(950m 100m 1meg 0 0 180)"
 }
 C {devices/lab_pin.sym} -1480 -310 2 1 {name=p18 sig_type=std_logic lab=V_IN_A_N}
 C {devices/lab_pin.sym} -1430 -210 0 0 {name=p27 sig_type=std_logic lab=VSS}
-C {devices/ammeter.sym} -700 -680 0 0 {name=Vtot savecurrent=true}
+C {devices/ammeter.sym} -700 -680 2 1 {name=Vtot savecurrent=true}
