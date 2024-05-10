@@ -14,7 +14,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=12
+x2=11.4
 
 subdivx=8
 node="\\"v_out_a_p db20()\\""
@@ -27,7 +27,7 @@ divx=5
 sweep=""
 rawfile=$netlist_dir/diff_amp_tb.raw
 sim_type=ac
-x1=0}
+x1=-0.6}
 B 2 20 -360 570 -40 {flags=graph,unlocked
 
 
@@ -36,8 +36,123 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-4.2707997e-07
-x2=3.4867089e-06
+x1=-1.0141483e-06
+x2=2.8996407e-06
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+y1=-2.3637226
+y2=5.5989016
+
+color="12 7"
+node="v_out_a_n
+v_out_a_p"}
+B 2 620 130 1170 380 {flags=graph,unlocked
+rawfile=$netlist_dir/diff_amp_tb.raw
+sim_type=ac
+y1=1.1
+y2=180
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=-0.6
+x2=11.4
+
+subdivx=8
+node=ph(v_out_a_p)
+color=4
+dataset=0
+unitx=1
+logx=1
+logy=0
+divx=5
+sweep=""}
+B 2 30 -750 580 -430 {flags=graph,unlocked
+
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+
+x2=5.25e-06
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+y1=-5
+y2=5
+rainbow=1
+color="5 4"
+node="v_in_a_p
+v_in_a_n"
+x1=2.5e-07}
+B 2 30 -1120 580 -800 {flags=graph,unlocked
+
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+
+x2=8.871788e-07
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+
+y2=2
+rainbow=1
+color="11 5"
+node="LO_N
+LO_P"
+x1=5.5098692e-07
+y1=-2}
+B 2 610 -360 1160 -40 {flags=graph,unlocked
+
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=2.2378259e-06
+x2=7.1966736e-06
 
 
 
@@ -55,32 +170,9 @@ subdivx=3
 y1=-2
 y2=+2
 
-color="12 7"
-node="v_out_a_n
-v_out_a_p"}
-B 2 620 130 1170 380 {flags=graph,unlocked
-rawfile=$netlist_dir/diff_amp_tb.raw
-sim_type=ac
-y1=1.1
-y2=180
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=0
-x2=12
-
-subdivx=8
-node=ph(v_out_a_p)
-color=4
-dataset=0
-unitx=1
-logx=1
-logy=0
-divx=5
-sweep=""}
-B 2 30 -750 580 -430 {flags=graph,unlocked
+color=12
+node="\\"v_out_a_p v_out_a_n -\\""}
+B 2 600 -750 1150 -430 {flags=graph,unlocked
 
 
 ypos1=0
@@ -104,14 +196,14 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2
-y2=2
+y1=-5
+y2=5
 rainbow=1
-color="11 5"
-node="v_in_a_n
-v_in_a_p"
+color="7 4"
+node="mix_in_p
+mix_in_n"
 x1=0}
-B 2 30 -1120 580 -800 {flags=graph,unlocked
+B 2 610 -1120 1160 -800 {flags=graph,unlocked
 
 
 ypos1=0
@@ -120,7 +212,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=9.4101618e-07
+x2=5e-06
 
 
 
@@ -135,14 +227,15 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2
-y2=+2
+
+
 rainbow=1
-color="11 5"
-node="LO_N
-LO_P"
-x1=7.4646069e-07}
-B 2 610 -360 1160 -40 {flags=graph,unlocked
+color=8
+node="\\"i(Vtot) 1000 *\\""
+x1=0
+y1=-1
+y2=0.5}
+B 2 50 -1530 600 -1210 {flags=graph,unlocked
 
 
 ypos1=0
@@ -150,8 +243,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-4.2707997e-07
-x2=3.4867089e-06
+
+x2=6e-06
 
 
 
@@ -166,11 +259,47 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2
-y2=+2
+y1=-5
+y2=5
+rainbow=1
+color="5 4"
+node="v_in_a_p
+v_in_a_n"
+x1=1e-06}
+B 2 620 -1530 1170 -1210 {flags=graph,unlocked
 
-color=12
-node="\\"v_out_a_p v_out_a_n -\\""}
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+
+x2=4.25e-06
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+y1=-5
+y2=5
+rainbow=1
+color="7 11 21 13 17"
+node="x1.net5
+x1.net4
+x1.net3
+x1.net2
+x1.net1"
+x1=-7.5e-07}
 T {Load sky 130 spice models} -310 60 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -178,13 +307,13 @@ currents) into the
 schematic.} -310 300 0 0 0.4 0.4 {}
 T {read raw file and load
 waves into Xschem graphs} -310 200 0 0 0.4 0.4 {}
-T {A: Differential Input, Differential Output} -760 -640 0 0 0.4 0.4 {}
+T {A: Gilbert Mixer} -760 -590 0 0 0.4 0.4 {}
 N -730 -780 -700 -780 {
 lab=VCC}
 N -600 -780 -570 -780 {
 lab=VSS}
 N -700 -720 -700 -710 {
-lab=GND}
+lab=#net1}
 N -570 -720 -570 -710 {
 lab=GND}
 N -540 -360 -510 -360 {
@@ -234,7 +363,7 @@ lab=MIX_IN_P}
 N -670 -420 -630 -420 {
 lab=MIX_IN_N}
 N -1430 -740 -1300 -740 {
-lab=#net1}
+lab=#net2}
 N -1150 -740 -1050 -740 {
 lab=LO_N}
 N -900 -740 -850 -740 {
@@ -259,14 +388,14 @@ N -980 -690 -980 -660 {
 lab=VSS}
 N -980 -810 -980 -790 {
 lab=VCC}
-N -1390 -240 -1390 -230 {
-lab=VSS}
-N -1430 -240 -1390 -240 {
-lab=VSS}
-N -1480 -320 -1390 -320 {
+N -1480 -310 -1390 -310 {
 lab=V_IN_A_N}
-N -1390 -320 -1390 -300 {
+N -1390 -310 -1390 -280 {
 lab=V_IN_A_N}
+N -1390 -220 -1390 -210 {
+lab=VSS}
+N -1430 -210 -1390 -210 {
+lab=VSS}
 C {devices/code.sym} -650 20 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -288,7 +417,7 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 }
 C {devices/vsource.sym} -700 -750 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/lab_pin.sym} -730 -780 0 0 {name=p1 sig_type=std_logic lab=VCC}
-C {devices/gnd.sym} -700 -710 0 0 {name=l1 lab=GND}
+C {devices/gnd.sym} -700 -650 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} -570 -750 0 0 {name=V2 value=0 savecurrent=false}
 C {devices/lab_pin.sym} -600 -780 0 0 {name=p2 sig_type=std_logic lab=VSS}
 C {devices/gnd.sym} -570 -710 0 0 {name=l2 lab=GND}
@@ -312,13 +441,13 @@ value="
   *ac dec 10 1e3 100e6
   *remzerovec
   *write gilbert_mixer_tb.raw
-  tran 100n 5u
+  tran 10n 5u
   write gilbert_mixer_tb.raw
 
 .endc
 "}
 C {devices/vsource.sym} -1390 -400 0 0 {name=V4 value="0 ac 1 0
-+ sin(900m 100m 1meg 0 0 0)"
++ sin(0 1900m 1meg 0 0 0)"
 }
 C {devices/lab_pin.sym} -1480 -460 2 1 {name=p17 sig_type=std_logic lab=V_IN_A_P}
 C {devices/lab_pin.sym} -1430 -360 0 0 {name=p19 sig_type=std_logic lab=VSS}
@@ -364,8 +493,9 @@ C {devices/lab_pin.sym} -890 -450 0 0 {name=p24 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -980 -660 0 0 {name=p15 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -1230 -810 0 0 {name=p25 sig_type=std_logic lab=VCC}
 C {devices/lab_pin.sym} -980 -810 0 0 {name=p26 sig_type=std_logic lab=VCC}
-C {devices/lab_pin.sym} -1480 -320 0 0 {name=p27 sig_type=std_logic lab=V_IN_A_N}
-C {devices/lab_pin.sym} -1430 -240 2 1 {name=p28 sig_type=std_logic lab=VSS}
-C {devices/vsource.sym} -1390 -270 0 0 {name=V6 value="0 ac 1 0
-+ sin(900m 100m 1meg 0 0 180)"
+C {devices/vsource.sym} -1390 -250 0 0 {name=V3 value="0 ac 1 0
++ sin(0 1900m 1meg 0 0 180)"
 }
+C {devices/lab_pin.sym} -1480 -310 2 1 {name=p18 sig_type=std_logic lab=V_IN_A_N}
+C {devices/lab_pin.sym} -1430 -210 0 0 {name=p27 sig_type=std_logic lab=VSS}
+C {devices/ammeter.sym} -700 -680 0 0 {name=Vtot savecurrent=true}
