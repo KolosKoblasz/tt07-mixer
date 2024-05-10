@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=7.5e-07
-x2=5.75e-06
+x1=1.5095321e-06
+x2=3.9671321e-06
 
 
 
@@ -52,8 +52,8 @@ rawfile=$netlist_dir/analog_inv_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2
-y2=+2
+y1=-4.3227476
+y2=2.3127724
 
 color="12 7"
 node="v_out_a_p"}
@@ -88,7 +88,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=6.840804e-06
+x2=1.0836747e-05
 
 
 
@@ -103,12 +103,13 @@ rawfile=$netlist_dir/analog_inv_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2
-y2=+2
+y1=0.79159806
+y2=1.7579657
 rainbow=1
-color="11 5"
-node="v_in_a_p"
-x1=2.0837827e-06}
+color="11 7"
+node="v_in_a_p
+v_out_a_p"
+x1=-6.2943176e-07}
 T {Load sky 130 spice models} -760 -1290 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -208,7 +209,7 @@ value="
 .endc
 "}
 C {devices/vsource.sym} -1720 -1800 0 0 {name=V4 value="0 ac 1 0
-+ sin(900m 900m 1meg 0 0 0)"
++ sin(900m 100m 1meg 0 0 0)"
 }
 C {devices/lab_pin.sym} -1810 -1860 2 1 {name=p17 sig_type=std_logic lab=V_IN_A_P}
 C {devices/lab_pin.sym} -1760 -1760 0 0 {name=p19 sig_type=std_logic lab=VSS}
