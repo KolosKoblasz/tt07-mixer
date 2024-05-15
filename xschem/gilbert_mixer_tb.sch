@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 30 150 580 400 {flags=graph,unlocked
-y1=-26.06
-y2=21.84
+y1=-6.9
+y2=41
 ypos1=0
 ypos2=2
 divy=5
@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.1588547e-07
-x2=3.5528964e-06
+x1=-5.7151673e-07
+x2=2.8654943e-06
 
 
 
@@ -151,8 +151,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-3.2663896e-08
-x2=2.0057677e-06
+x1=-5e-07
+x2=1.5e-06
 
 
 
@@ -167,8 +167,8 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2
-y2=2
+y1=-1.1678578
+y2=4.5921422
 
 color=12
 node="\\"v_out_a_p v_out_a_n -\\""}
@@ -181,7 +181,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=2e-06
+x2=1.9e-06
 
 
 
@@ -196,13 +196,13 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-5
-y2=5
+y1=-1
+y2=1
 rainbow=1
 color="7 4"
 node="mix_in_p
 mix_in_n"
-x1=0}
+x1=-1e-07}
 B 2 610 -1120 1160 -800 {flags=graph,unlocked
 
 
@@ -212,7 +212,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=2e-06
+x2=1.9e-06
 
 
 
@@ -232,7 +232,7 @@ subdivx=3
 rainbow=1
 color=8
 node="\\"i(Vtot) 1000 *\\""
-x1=0
+x1=-1e-07
 y1=-1
 y2=0.5}
 B 2 50 -1530 600 -1210 {flags=graph,unlocked
@@ -275,7 +275,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=2e-06
+x2=1.8e-06
 
 
 
@@ -299,7 +299,7 @@ x1.net4
 x1.net3
 x1.net2
 x1.net1"
-x1=0}
+x1=-2e-07}
 T {Load sky 130 spice models} -310 60 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -332,18 +332,14 @@ N -1390 -370 -1390 -360 {
 lab=VSS}
 N -1020 -360 -990 -360 {
 lab=V_IN_A_P}
-N -860 -360 -770 -360 {
-lab=MIX_IN_P}
 N -890 -450 -860 -450 {
 lab=VSS}
 N -860 -450 -860 -420 {
 lab=VSS}
 N -900 -360 -860 -360 {
-lab=MIX_IN_P}
+lab=#net2}
 N -990 -360 -960 -360 {
 lab=V_IN_A_P}
-N -770 -360 -740 -360 {
-lab=MIX_IN_P}
 N -1020 -290 -990 -290 {
 lab=V_IN_A_N}
 N -890 -200 -860 -200 {
@@ -351,11 +347,9 @@ lab=VSS}
 N -860 -230 -860 -200 {
 lab=VSS}
 N -900 -290 -860 -290 {
-lab=MIX_IN_N}
+lab=#net3}
 N -990 -290 -960 -290 {
 lab=V_IN_A_N}
-N -860 -290 -740 -290 {
-lab=MIX_IN_N}
 N -1430 -360 -1390 -360 {
 lab=VSS}
 N -670 -440 -630 -440 {
@@ -363,7 +357,7 @@ lab=MIX_IN_P}
 N -670 -420 -630 -420 {
 lab=MIX_IN_N}
 N -1430 -740 -1300 -740 {
-lab=#net2}
+lab=#net4}
 N -1150 -740 -1050 -740 {
 lab=LO_N}
 N -900 -740 -850 -740 {
@@ -396,6 +390,14 @@ N -1390 -220 -1390 -210 {
 lab=VSS}
 N -1430 -210 -1390 -210 {
 lab=VSS}
+N -860 -360 -840 -360 {
+lab=#net2}
+N -780 -360 -740 -360 {
+lab=MIX_IN_P}
+N -860 -290 -840 -290 {
+lab=#net3}
+N -780 -290 -740 -290 {
+lab=MIX_IN_N}
 C {devices/code.sym} -650 20 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -442,12 +444,13 @@ value="
   *remzerovec
   *write gilbert_mixer_tb.raw
   tran 10n 2u
+  remzerovec
   write gilbert_mixer_tb.raw
 
 .endc
 "}
 C {devices/vsource.sym} -1390 -400 0 0 {name=V4 value="0 ac 1 0
-+ sin(950m 100m 1meg 0 0 0)"
++ sin(0 100m 1meg 0 0 0)"
 }
 C {devices/lab_pin.sym} -1480 -460 2 1 {name=p17 sig_type=std_logic lab=V_IN_A_P}
 C {devices/lab_pin.sym} -1430 -360 0 0 {name=p19 sig_type=std_logic lab=VSS}
@@ -494,8 +497,18 @@ C {devices/lab_pin.sym} -980 -660 0 0 {name=p15 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -1230 -810 0 0 {name=p25 sig_type=std_logic lab=VCC}
 C {devices/lab_pin.sym} -980 -810 0 0 {name=p26 sig_type=std_logic lab=VCC}
 C {devices/vsource.sym} -1390 -250 0 0 {name=V3 value="0 ac 1 0
-+ sin(950m 100m 1meg 0 0 180)"
++ sin(0 100m 1meg 0 0 180)"
 }
 C {devices/lab_pin.sym} -1480 -310 2 1 {name=p18 sig_type=std_logic lab=V_IN_A_N}
 C {devices/lab_pin.sym} -1430 -210 0 0 {name=p27 sig_type=std_logic lab=VSS}
 C {devices/ammeter.sym} -700 -680 2 1 {name=Vtot savecurrent=true}
+C {devices/capa.sym} -810 -360 1 1 {name=C3
+m=1
+value=500n
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -810 -290 1 0 {name=C4
+m=1
+value=500n
+footprint=1206
+device="ceramic capacitor"}
