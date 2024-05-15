@@ -5,7 +5,7 @@ K {}
 V {}
 S {}
 E {}
-B 2 190 -460 740 -140 {flags=graph,unlocked
+B 2 890 -810 1440 -490 {flags=graph,unlocked
 
 
 ypos1=0
@@ -33,10 +33,31 @@ subdivx=3
 
 rainbow=1
 color=8
-node="\\"i(Vd) 1000 *\\""
+node="\\"i(Vdrain) 1000 *\\""
 x1=0
 y1=-1
 y2=0.5}
+B 2 60 -330 860 70 {flags=graph
+y1=0
+y2=2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=10e-6
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=""
+color=""
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 T {Load sky 130 spice models} -290 260 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -110,4 +131,4 @@ C {devices/ipin.sym} -720 -220 0 0 {name=p46 lab=G}
 C {devices/ipin.sym} -720 -180 0 0 {name=p47 lab=S}
 C {devices/lab_pin.sym} -340 -190 0 1 {name=p3 sig_type=std_logic lab=S}
 C {devices/lab_pin.sym} -530 -190 0 0 {name=p4 sig_type=std_logic lab=G}
-C {devices/ammeter.sym} -460 -300 0 0 {name=Vd}
+C {devices/ammeter.sym} -460 -300 0 0 {name=Vdrain}
