@@ -14,7 +14,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=2e-06
+x2=1.8e-06
 
 
 
@@ -34,7 +34,7 @@ subdivx=3
 rainbow=1
 color=8
 node="\\"i(Vdrain) 1000 *\\""
-x1=0
+x1=-2e-07
 y1=-1
 y2=0.5}
 B 2 60 -330 860 70 {flags=graph
@@ -45,14 +45,16 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=10e-6
+x1=0.36
+x2=2.16
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node=""
-color=""
+rawfile=$netlist_dir/fet_tb.raw
+sim_type=dc
+node="\\"IDrain [mA]; i(vdrain) 1000 *\\""
+color=8
 dataset=-1
 unitx=1
 logx=0
@@ -107,7 +109,7 @@ tclcommand="set show_hidden_texts 1; xschem annotate_op"
 C {devices/launcher.sym} -590 410 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
-xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
+xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw dc
 "
 }
 C {devices/simulator_commands_shown.sym} -980 260 0 0 {name=COMMANDS
@@ -121,6 +123,7 @@ vs S 0 0
 .control
 save all
 dc vg 0 1.8 0.1
+remzerovec
 *dc temp -40 140 1
 write fet_tb.raw
 .endc
