@@ -67,13 +67,15 @@ T {read raw file and load
 waves into Xschem graphs} -290 400 0 0 0.4 0.4 {}
 N -530 -190 -500 -190 {
 lab=G}
-N -460 -160 -460 -120 {
-lab=S}
-N -460 -270 -460 -220 {
-lab=#net1}
 N -460 -190 -340 -190 {
 lab=S}
 N -460 -390 -460 -330 {
+lab=D}
+N -460 -60 -460 -30 {
+lab=S}
+N -460 -160 -460 -120 {
+lab=#net1}
+N -460 -330 -460 -220 {
 lab=D}
 C {sky130_fd_pr/nfet_01v8.sym} -480 -190 0 0 {name=M1
 L=0.38
@@ -124,11 +126,11 @@ write fet_tb.raw
 .endc
 
 "}
-C {devices/lab_pin.sym} -460 -120 0 0 {name=p1 sig_type=std_logic lab=S}
+C {devices/lab_pin.sym} -460 -30 0 0 {name=p1 sig_type=std_logic lab=S}
 C {devices/lab_pin.sym} -460 -390 2 1 {name=p2 sig_type=std_logic lab=D}
 C {devices/ipin.sym} -720 -260 0 0 {name=p45 lab=D}
 C {devices/ipin.sym} -720 -220 0 0 {name=p46 lab=G}
 C {devices/ipin.sym} -720 -180 0 0 {name=p47 lab=S}
 C {devices/lab_pin.sym} -340 -190 0 1 {name=p3 sig_type=std_logic lab=S}
 C {devices/lab_pin.sym} -530 -190 0 0 {name=p4 sig_type=std_logic lab=G}
-C {devices/ammeter.sym} -460 -300 0 0 {name=Vdrain}
+C {devices/ammeter.sym} -460 -90 0 0 {name=Vdrain}
