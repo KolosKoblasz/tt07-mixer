@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.7170486e-07
-x2=3.0618868e-07
+x1=0
+x2=0.0004
 
 
 
@@ -52,8 +52,8 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-2.2403162
-y2=0.9596838
+y1=-3.5049272
+y2=3.5398927
 
 color="12 7"
 node="v_out_n
@@ -89,7 +89,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=2e-06
+x2=0.0004
 
 
 
@@ -104,8 +104,8 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-3
-y2=7
+y1=0.64555477
+y2=1.3289731
 rainbow=1
 color="5 4"
 node="v_in_p
@@ -120,7 +120,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=8.9828681e-07
+x2=0.00043535239
 
 
 
@@ -141,7 +141,7 @@ rainbow=1
 color="11 5"
 node="LO_N
 LO_P"
-x1=8.7834244e-07
+x1=0.00015916191
 y1=-2}
 B 2 610 -360 1160 -40 {flags=graph,unlocked
 
@@ -151,8 +151,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.3658208e-07
-x2=4.1917557e-06
+x1=8.0241794e-05
+x2=0.00040459931
 
 
 
@@ -181,7 +181,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=2.8478119e-06
+x2=0.00042350578
 
 
 
@@ -201,9 +201,9 @@ subdivx=3
 rainbow=1
 color=8
 node="\\"i(Vtot) 1000 *\\""
-x1=9.897281e-07
-y1=0.43455643
-y2=0.52045578}
+x1=-0.00011456365
+y1=0.58043877
+y2=0.62347133}
 B 2 610 -750 1160 -430 {flags=graph,unlocked
 
 
@@ -213,7 +213,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=1.844838e-06
+x2=2.144838e-06
 
 
 
@@ -228,8 +228,8 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-5
-y2=5
+y1=-15
+y2=-5
 rainbow=1
 color="7 11 21 13 17"
 node="x1.net5
@@ -237,7 +237,7 @@ x1.net4
 x1.net3
 x1.net2
 x1.net1"
-x1=-1.5516198e-07}
+x1=1.4483802e-07}
 T {Load sky 130 spice models} -430 50 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -245,71 +245,107 @@ currents) into the
 schematic.} -430 290 0 0 0.4 0.4 {}
 T {read raw file and load
 waves into Xschem graphs} -430 190 0 0 0.4 0.4 {}
-T {Gilbert Mixer} -570 -580 0 0 0.4 0.4 {}
-T {Power Supply - 1.8V} -1110 -1140 0 0 0.4 0.4 {}
+T {Gilbert Mixer} -970 -590 0 0 0.4 0.4 {}
+T {Power Supply - 1.8V} -1510 -1150 0 0 0.4 0.4 {}
 T {Local Oscillator square wave
-1.8V, 50MHz, 100ps rise and fall time} -1100 -820 0 0 0.4 0.4 {}
+1.8V, 1MHz, 100ps rise and fall time} -1500 -830 0 0 0.4 0.4 {}
 T {Input signal sine wave
-100mV 1MHz } -850 -400 0 1 0.4 0.4 {}
-N -1110 -1080 -1080 -1080 {
+100mV 10KHz } -1240 -440 0 1 0.4 0.4 {}
+N -1510 -1090 -1480 -1090 {
 lab=VCC}
-N -980 -1080 -950 -1080 {
+N -1380 -1090 -1350 -1090 {
 lab=VSS}
-N -1080 -1020 -1080 -1010 {
+N -1480 -1030 -1480 -1020 {
 lab=#net1}
-N -950 -1020 -950 -1010 {
+N -1350 -1030 -1350 -1020 {
 lab=GND}
-N -540 -360 -510 -360 {
+N -940 -370 -910 -370 {
 lab=VSS}
-N -540 -390 -540 -360 {
+N -940 -400 -940 -370 {
 lab=VSS}
-N -540 -540 -500 -540 {
+N -940 -550 -900 -550 {
 lab=VCC}
-N -540 -540 -540 -510 {
+N -940 -550 -940 -520 {
 lab=VCC}
-N -1080 -330 -990 -330 {
+N -1480 -340 -1390 -340 {
+lab=#net2}
+N -1480 -340 -1480 -310 {
+lab=#net2}
+N -1480 -250 -1480 -240 {
+lab=VSS}
+N -1480 -240 -1440 -240 {
+lab=VSS}
+N -1070 -450 -1030 -450 {
 lab=V_IN_P}
-N -1080 -330 -1080 -300 {
+N -1070 -430 -1030 -430 {
+lab=V_IN_N}
+N -1080 -490 -1030 -490 {
+lab=LO_P}
+N -1080 -470 -1030 -470 {
+lab=LO_N}
+N -1480 -190 -1390 -190 {
+lab=#net3}
+N -1480 -190 -1480 -160 {
+lab=#net3}
+N -1480 -100 -1480 -90 {
+lab=VSS}
+N -1480 -90 -1440 -90 {
+lab=VSS}
+N -1490 -620 -1390 -620 {
+lab=LO_N}
+N -1490 -750 -1390 -750 {
+lab=LO_P}
+N -1490 -520 -1390 -520 {
+lab=VSS}
+N -1490 -540 -1490 -520 {
+lab=VSS}
+N -1490 -670 -1490 -650 {
+lab=VSS}
+N -1490 -650 -1390 -650 {
+lab=VSS}
+N -1490 -750 -1490 -730 {
+lab=LO_P}
+N -1490 -620 -1490 -600 {
+lab=LO_N}
+N -730 -470 -670 -470 {
+lab=#net4}
+N -730 -450 -670 -450 {
+lab=#net5}
+N -1200 -190 -1170 -190 {
+lab=V_IN_N}
+N -1240 -130 -1240 -90 {
+lab=VSS}
+N -1200 -340 -1170 -340 {
 lab=V_IN_P}
-N -1080 -240 -1080 -230 {
+N -1240 -280 -1240 -240 {
 lab=VSS}
-N -1080 -230 -1040 -230 {
+N -640 -410 -550 -410 {
+lab=#net5}
+N -640 -510 -550 -510 {
+lab=#net4}
+N -610 -610 -610 -570 {
 lab=VSS}
-N -670 -440 -630 -440 {
+N -610 -350 -610 -310 {
+lab=VSS}
+N -670 -470 -640 -470 {
+lab=#net4}
+N -640 -510 -640 -470 {
+lab=#net4}
+N -670 -450 -640 -450 {
+lab=#net5}
+N -640 -450 -640 -410 {
+lab=#net5}
+N -1270 -340 -1200 -340 {
 lab=V_IN_P}
-N -670 -420 -630 -420 {
+N -1270 -190 -1200 -190 {
 lab=V_IN_N}
-N -680 -480 -630 -480 {
-lab=LO_P}
-N -680 -460 -630 -460 {
-lab=LO_N}
-N -1080 -180 -990 -180 {
-lab=V_IN_N}
-N -1080 -180 -1080 -150 {
-lab=V_IN_N}
-N -1080 -90 -1080 -80 {
-lab=VSS}
-N -1080 -80 -1040 -80 {
-lab=VSS}
-N -1090 -610 -990 -610 {
-lab=LO_N}
-N -1090 -740 -990 -740 {
-lab=LO_P}
-N -1090 -510 -990 -510 {
-lab=VSS}
-N -1090 -530 -1090 -510 {
-lab=VSS}
-N -1090 -660 -1090 -640 {
-lab=VSS}
-N -1090 -640 -990 -640 {
-lab=VSS}
-N -1090 -740 -1090 -720 {
-lab=LO_P}
-N -1090 -610 -1090 -590 {
-lab=LO_N}
-N -330 -460 -270 -460 {
+N -490 -510 -460 -510 {
+lab=#net6}
+N -400 -510 -360 -510 {
 lab=V_OUT_P}
-N -330 -440 -270 -440 {
+N -490 -410 -460 -410 {
+lab=#net7}
+N -400 -410 -360 -410 {
 lab=V_OUT_N}
 C {devices/code.sym} -650 20 0 0 {name=TT_MODELS
 only_toplevel=true
@@ -330,16 +366,16 @@ tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
 "
 }
-C {devices/vsource.sym} -1080 -1050 0 0 {name=V1 value=1.8 savecurrent=false}
-C {devices/lab_pin.sym} -1110 -1080 0 0 {name=p1 sig_type=std_logic lab=VCC}
-C {devices/gnd.sym} -1080 -950 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} -950 -1050 0 0 {name=V2 value=0 savecurrent=false}
-C {devices/lab_pin.sym} -980 -1080 0 0 {name=p2 sig_type=std_logic lab=VSS}
-C {devices/gnd.sym} -950 -1010 0 0 {name=l2 lab=GND}
-C {devices/lab_pin.sym} -510 -360 0 1 {name=p5 sig_type=std_logic lab=VSS}
-C {devices/opin.sym} -270 -440 0 0 {name=p7 lab=V_OUT_N}
-C {devices/opin.sym} -270 -460 0 0 {name=p6 lab=V_OUT_P}
-C {devices/lab_pin.sym} -500 -540 0 1 {name=p16 sig_type=std_logic lab=VCC}
+C {devices/vsource.sym} -1480 -1060 0 0 {name=V1 value=1.8 savecurrent=false}
+C {devices/lab_pin.sym} -1510 -1090 0 0 {name=p1 sig_type=std_logic lab=VCC}
+C {devices/gnd.sym} -1480 -960 0 0 {name=l1 lab=GND}
+C {devices/vsource.sym} -1350 -1060 0 0 {name=V2 value=0 savecurrent=false}
+C {devices/lab_pin.sym} -1380 -1090 0 0 {name=p2 sig_type=std_logic lab=VSS}
+C {devices/gnd.sym} -1350 -1020 0 0 {name=l2 lab=GND}
+C {devices/lab_pin.sym} -910 -370 0 1 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/opin.sym} -360 -410 0 0 {name=p7 lab=V_OUT_N}
+C {devices/opin.sym} -360 -510 0 0 {name=p6 lab=V_OUT_P}
+C {devices/lab_pin.sym} -900 -550 0 1 {name=p16 sig_type=std_logic lab=VCC}
 C {devices/simulator_commands_shown.sym} -1010 60 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false
@@ -355,35 +391,99 @@ value="
   *ac dec 10 1e3 100e6
   *remzerovec
   *write gilbert_mixer_tb.raw
-  tran 1n 2u
+  tran 100n 400u
   remzerovec
   write gilbert_mixer_tb.raw
 
 .endc
 "}
-C {devices/vsource.sym} -1080 -270 0 1 {name=V4 value="0 ac 1 0
-+ sin(0 100m 1meg 0 0 0)"
+C {devices/vsource.sym} -1480 -280 0 1 {name=V4 value="0 ac 1 0
++ sin(0 100m 10k 0 0 0)"
 }
-C {devices/lab_pin.sym} -990 -330 2 0 {name=p17 sig_type=std_logic lab=V_IN_P}
-C {devices/lab_pin.sym} -1040 -230 0 1 {name=p19 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} -990 -510 2 0 {name=p12 sig_type=std_logic lab=VSS}
-C {gilbert_mixer.sym} -480 -450 0 0 {name=x1}
-C {devices/vsource.sym} -1090 -560 0 0 {name=V5 value="0 ac 1 0
-+ pulse(0 1.8 2ns 100ps 100ps 10ns 20ns 400)"
+C {devices/lab_pin.sym} -1170 -340 2 0 {name=p17 sig_type=std_logic lab=V_IN_P}
+C {devices/lab_pin.sym} -1440 -240 0 1 {name=p19 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} -1390 -520 2 0 {name=p12 sig_type=std_logic lab=VSS}
+C {gilbert_mixer.sym} -880 -460 0 0 {name=x1}
+C {devices/vsource.sym} -1490 -570 0 0 {name=V5 value="0 ac 1 0
++ pulse(0 1.8 2ns 100ps 100ps 500ns 1us 400)"
 }
-C {devices/lab_pin.sym} -990 -740 2 0 {name=p20 sig_type=std_logic lab=LO_P}
-C {devices/lab_pin.sym} -990 -610 2 0 {name=p21 sig_type=std_logic lab=LO_N}
-C {devices/lab_pin.sym} -680 -480 2 1 {name=p22 sig_type=std_logic lab=LO_P}
-C {devices/lab_pin.sym} -680 -460 2 1 {name=p23 sig_type=std_logic lab=LO_N}
-C {devices/vsource.sym} -1080 -120 0 1 {name=V3 value="0 ac 1 0
-+ sin(0 100m 1meg 0 0 180)"
+C {devices/lab_pin.sym} -1390 -750 2 0 {name=p20 sig_type=std_logic lab=LO_P}
+C {devices/lab_pin.sym} -1390 -620 2 0 {name=p21 sig_type=std_logic lab=LO_N}
+C {devices/lab_pin.sym} -1080 -490 2 1 {name=p22 sig_type=std_logic lab=LO_P}
+C {devices/lab_pin.sym} -1080 -470 2 1 {name=p23 sig_type=std_logic lab=LO_N}
+C {devices/vsource.sym} -1480 -130 0 1 {name=V3 value="0 ac 1 0
++ sin(0 100m 10k 0 0 180)"
 }
-C {devices/lab_pin.sym} -990 -180 2 0 {name=p18 sig_type=std_logic lab=V_IN_N}
-C {devices/lab_pin.sym} -1040 -80 0 1 {name=p27 sig_type=std_logic lab=VSS}
-C {devices/ammeter.sym} -1080 -980 2 1 {name=Vtot savecurrent=true}
-C {devices/lab_pin.sym} -990 -640 2 0 {name=p14 sig_type=std_logic lab=VSS}
-C {devices/vsource.sym} -1090 -690 0 0 {name=V6 value="0 ac 1 0
-+ pulse(1.8 0 2ns 100ps 100ps 10ns 20ns 400"
+C {devices/lab_pin.sym} -1170 -190 2 0 {name=p18 sig_type=std_logic lab=V_IN_N}
+C {devices/lab_pin.sym} -1440 -90 0 1 {name=p27 sig_type=std_logic lab=VSS}
+C {devices/ammeter.sym} -1480 -990 2 1 {name=Vtot savecurrent=true}
+C {devices/lab_pin.sym} -1390 -650 2 0 {name=p14 sig_type=std_logic lab=VSS}
+C {devices/vsource.sym} -1490 -700 0 0 {name=V6 value="0 ac 1 0
++ pulse(1.8 0 2ns 100ps 100ps 500ns 1us 400"
 }
-C {devices/lab_pin.sym} -670 -440 2 1 {name=p3 sig_type=std_logic lab=V_IN_P}
-C {devices/lab_pin.sym} -670 -420 2 1 {name=p4 sig_type=std_logic lab=V_IN_N}
+C {devices/lab_pin.sym} -1070 -450 2 1 {name=p3 sig_type=std_logic lab=V_IN_P}
+C {devices/lab_pin.sym} -1070 -430 2 1 {name=p4 sig_type=std_logic lab=V_IN_N}
+C {devices/res.sym} -1300 -190 1 0 {name=R1
+value=500
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} -1240 -90 0 1 {name=p8 sig_type=std_logic lab=VSS}
+C {devices/res.sym} -1300 -340 1 0 {name=R2
+value=500
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} -1240 -240 0 1 {name=p9 sig_type=std_logic lab=VSS}
+C {devices/res.sym} -520 -510 1 1 {name=R3
+value=500
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} -610 -610 2 0 {name=p10 sig_type=std_logic lab=VSS}
+C {devices/res.sym} -520 -410 1 0 {name=R4
+value=500
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} -610 -310 0 1 {name=p11 sig_type=std_logic lab=VSS}
+C {devices/capa.sym} -1240 -310 0 0 {name=C1
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -1240 -160 0 0 {name=C3
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -610 -380 0 0 {name=C5
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -610 -540 2 1 {name=C6
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -1360 -340 3 0 {name=C4
+m=1
+value=100n
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -1360 -190 3 0 {name=C2
+m=1
+value=100n
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -430 -510 3 0 {name=C7
+m=1
+value=100n
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -430 -410 3 0 {name=C8
+m=1
+value=100n
+footprint=1206
+device="ceramic capacitor"}
