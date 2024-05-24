@@ -151,8 +151,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=8.0241794e-05
-x2=0.00040459931
+x1=0.00016122015
+x2=0.0001910388
 
 
 
@@ -167,8 +167,8 @@ rawfile=$netlist_dir/gilbert_mixer_tb.raw
 sim_type=tran
 subdivx=3
 
-y1=-1.5385373
-y2=1.1207932
+y1=-0.9846475
+y2=2.3503925
 
 color=12
 node="\\"v_out_p v_out_n -\\""}
@@ -311,13 +311,13 @@ N -730 -470 -670 -470 {
 lab=#net4}
 N -730 -450 -670 -450 {
 lab=#net5}
-N -1200 -190 -1170 -190 {
+N -1260 -190 -1230 -190 {
 lab=V_IN_N}
-N -1240 -130 -1240 -90 {
+N -1300 -130 -1300 -90 {
 lab=VSS}
-N -1200 -340 -1170 -340 {
+N -1260 -340 -1230 -340 {
 lab=V_IN_P}
-N -1240 -280 -1240 -240 {
+N -1300 -280 -1300 -240 {
 lab=VSS}
 N -640 -410 -550 -410 {
 lab=#net5}
@@ -335,9 +335,9 @@ N -670 -450 -640 -450 {
 lab=#net5}
 N -640 -450 -640 -410 {
 lab=#net5}
-N -1270 -340 -1200 -340 {
+N -1330 -340 -1260 -340 {
 lab=V_IN_P}
-N -1270 -190 -1200 -190 {
+N -1330 -190 -1260 -190 {
 lab=V_IN_N}
 N -490 -510 -460 -510 {
 lab=#net6}
@@ -398,9 +398,9 @@ value="
 .endc
 "}
 C {devices/vsource.sym} -1480 -280 0 1 {name=V4 value="0 ac 1 0
-+ sin(0 100m 10k 0 0 0)"
++ sin(950m 100m 10k 0 0 0)"
 }
-C {devices/lab_pin.sym} -1170 -340 2 0 {name=p17 sig_type=std_logic lab=V_IN_P}
+C {devices/lab_pin.sym} -1230 -340 2 0 {name=p17 sig_type=std_logic lab=V_IN_P}
 C {devices/lab_pin.sym} -1440 -240 0 1 {name=p19 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -1390 -520 2 0 {name=p12 sig_type=std_logic lab=VSS}
 C {gilbert_mixer.sym} -880 -460 0 0 {name=x1}
@@ -412,9 +412,9 @@ C {devices/lab_pin.sym} -1390 -620 2 0 {name=p21 sig_type=std_logic lab=LO_N}
 C {devices/lab_pin.sym} -1080 -490 2 1 {name=p22 sig_type=std_logic lab=LO_P}
 C {devices/lab_pin.sym} -1080 -470 2 1 {name=p23 sig_type=std_logic lab=LO_N}
 C {devices/vsource.sym} -1480 -130 0 1 {name=V3 value="0 ac 1 0
-+ sin(0 100m 10k 0 0 180)"
++ sin(950M 100m 10k 0 0 180)"
 }
-C {devices/lab_pin.sym} -1170 -190 2 0 {name=p18 sig_type=std_logic lab=V_IN_N}
+C {devices/lab_pin.sym} -1230 -190 2 0 {name=p18 sig_type=std_logic lab=V_IN_N}
 C {devices/lab_pin.sym} -1440 -90 0 1 {name=p27 sig_type=std_logic lab=VSS}
 C {devices/ammeter.sym} -1480 -990 2 1 {name=Vtot savecurrent=true}
 C {devices/lab_pin.sym} -1390 -650 2 0 {name=p14 sig_type=std_logic lab=VSS}
@@ -423,18 +423,18 @@ C {devices/vsource.sym} -1490 -700 0 0 {name=V6 value="0 ac 1 0
 }
 C {devices/lab_pin.sym} -1070 -450 2 1 {name=p3 sig_type=std_logic lab=V_IN_P}
 C {devices/lab_pin.sym} -1070 -430 2 1 {name=p4 sig_type=std_logic lab=V_IN_N}
-C {devices/res.sym} -1300 -190 1 0 {name=R1
+C {devices/res.sym} -1360 -190 1 0 {name=R1
 value=500
 footprint=1206
 device=resistor
 m=1}
-C {devices/lab_pin.sym} -1240 -90 0 1 {name=p8 sig_type=std_logic lab=VSS}
-C {devices/res.sym} -1300 -340 1 0 {name=R2
+C {devices/lab_pin.sym} -1300 -90 0 1 {name=p8 sig_type=std_logic lab=VSS}
+C {devices/res.sym} -1360 -340 1 0 {name=R2
 value=500
 footprint=1206
 device=resistor
 m=1}
-C {devices/lab_pin.sym} -1240 -240 0 1 {name=p9 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} -1300 -240 0 1 {name=p9 sig_type=std_logic lab=VSS}
 C {devices/res.sym} -520 -510 1 1 {name=R3
 value=500
 footprint=1206
@@ -447,12 +447,12 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/lab_pin.sym} -610 -310 0 1 {name=p11 sig_type=std_logic lab=VSS}
-C {devices/capa.sym} -1240 -310 0 0 {name=C1
+C {devices/capa.sym} -1300 -310 0 0 {name=C1
 m=1
 value=5p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/capa.sym} -1240 -160 0 0 {name=C3
+C {devices/capa.sym} -1300 -160 0 0 {name=C3
 m=1
 value=5p
 footprint=1206
@@ -465,16 +465,6 @@ device="ceramic capacitor"}
 C {devices/capa.sym} -610 -540 2 1 {name=C6
 m=1
 value=5p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/capa.sym} -1360 -340 3 0 {name=C4
-m=1
-value=100n
-footprint=1206
-device="ceramic capacitor"}
-C {devices/capa.sym} -1360 -190 3 0 {name=C2
-m=1
-value=100n
 footprint=1206
 device="ceramic capacitor"}
 C {devices/capa.sym} -430 -510 3 0 {name=C7
