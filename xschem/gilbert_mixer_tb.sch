@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=0.0004
+x1=7.6098283e-05
+x2=0.0009808452
 
 
 
@@ -151,8 +151,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0.00016122015
-x2=0.0001910388
+x1=0.00018184674
+x2=0.00034079706
 
 
 
@@ -181,7 +181,7 @@ divy=5
 subdivy=1
 unity=1
 
-x2=0.00042350578
+x2=0.00028806689
 
 
 
@@ -200,10 +200,10 @@ subdivx=3
 
 rainbow=1
 color=8
-node="\\"i(Vtot) 1000 *\\""
-x1=-0.00011456365
-y1=0.58043877
-y2=0.62347133}
+node="\\"i(V_ideal) 1000 *\\""
+x1=2.3595019e-05
+y1=-0.068527256
+y2=0.60535768}
 B 2 610 -750 1160 -430 {flags=graph,unlocked
 
 
@@ -238,6 +238,65 @@ x1.net3
 x1.net2
 x1.net1"
 x1=1.4483802e-07}
+B 2 1260 -360 1810 -40 {flags=graph,unlocked
+
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=-1.4376409e-05
+x2=0.0008903705
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+y1=-3.5049272
+y2=3.5398927
+
+color="12 7"
+node="v_out_p_parax
+v_out_n_parax"}
+B 2 1850 -360 2400 -40 {flags=graph,unlocked
+
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0.0001062899
+x2=0.00052620535
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/gilbert_mixer_tb.raw
+sim_type=tran
+subdivx=3
+
+y1=-0.9846475
+y2=2.3503925
+
+color=13
+node="\\"v_out_p_parax v_out_n_parax -\\""}
 T {Load sky 130 spice models} -430 50 0 0 0.4 0.4 {}
 T {Anotate operating
 point data (voltages,
@@ -245,28 +304,29 @@ currents) into the
 schematic.} -430 290 0 0 0.4 0.4 {}
 T {read raw file and load
 waves into Xschem graphs} -430 190 0 0 0.4 0.4 {}
-T {Gilbert Mixer} -970 -590 0 0 0.4 0.4 {}
+T {Gilbert Mixer} -970 -670 0 0 0.4 0.4 {}
 T {Power Supply - 1.8V} -1510 -1150 0 0 0.4 0.4 {}
 T {Local Oscillator square wave
 1.8V, 1MHz, 100ps rise and fall time} -1500 -830 0 0 0.4 0.4 {}
 T {Input signal sine wave
 100mV 10KHz } -1240 -440 0 1 0.4 0.4 {}
+T {Gilbert Mixer Parax} -960 -1210 0 0 0.4 0.4 {}
 N -1510 -1090 -1480 -1090 {
 lab=VCC}
 N -1380 -1090 -1350 -1090 {
 lab=VSS}
 N -1480 -1030 -1480 -1020 {
-lab=#net1}
+lab=GND}
 N -1350 -1030 -1350 -1020 {
 lab=GND}
 N -940 -370 -910 -370 {
 lab=VSS}
 N -940 -400 -940 -370 {
 lab=VSS}
-N -940 -550 -900 -550 {
+N -940 -630 -900 -630 {
 lab=VCC}
 N -940 -550 -940 -520 {
-lab=VCC}
+lab=#net1}
 N -1480 -340 -1390 -340 {
 lab=#net2}
 N -1480 -340 -1480 -310 {
@@ -347,6 +407,54 @@ N -490 -410 -460 -410 {
 lab=#net7}
 N -400 -410 -360 -410 {
 lab=V_OUT_N}
+N -940 -630 -940 -610 {
+lab=VCC}
+N -930 -910 -900 -910 {
+lab=VSS}
+N -930 -940 -930 -910 {
+lab=VSS}
+N -930 -1170 -890 -1170 {
+lab=VCC}
+N -930 -1090 -930 -1060 {
+lab=#net8}
+N -1060 -990 -1020 -990 {
+lab=V_IN_P}
+N -1060 -970 -1020 -970 {
+lab=V_IN_N}
+N -1070 -1030 -1020 -1030 {
+lab=LO_P}
+N -1070 -1010 -1020 -1010 {
+lab=LO_N}
+N -720 -1010 -660 -1010 {
+lab=#net9}
+N -720 -990 -660 -990 {
+lab=#net10}
+N -630 -950 -540 -950 {
+lab=#net10}
+N -630 -1050 -540 -1050 {
+lab=#net9}
+N -600 -1150 -600 -1110 {
+lab=VSS}
+N -600 -890 -600 -850 {
+lab=VSS}
+N -660 -1010 -630 -1010 {
+lab=#net9}
+N -630 -1050 -630 -1010 {
+lab=#net9}
+N -660 -990 -630 -990 {
+lab=#net10}
+N -630 -990 -630 -950 {
+lab=#net10}
+N -480 -1050 -450 -1050 {
+lab=#net11}
+N -390 -1050 -350 -1050 {
+lab=V_OUT_P_parax}
+N -480 -950 -450 -950 {
+lab=#net12}
+N -390 -950 -350 -950 {
+lab=V_OUT_N_parax}
+N -930 -1170 -930 -1150 {
+lab=VCC}
 C {devices/code.sym} -650 20 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -368,14 +476,14 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 }
 C {devices/vsource.sym} -1480 -1060 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/lab_pin.sym} -1510 -1090 0 0 {name=p1 sig_type=std_logic lab=VCC}
-C {devices/gnd.sym} -1480 -960 0 0 {name=l1 lab=GND}
+C {devices/gnd.sym} -1480 -1020 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} -1350 -1060 0 0 {name=V2 value=0 savecurrent=false}
 C {devices/lab_pin.sym} -1380 -1090 0 0 {name=p2 sig_type=std_logic lab=VSS}
 C {devices/gnd.sym} -1350 -1020 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} -910 -370 0 1 {name=p5 sig_type=std_logic lab=VSS}
 C {devices/opin.sym} -360 -410 0 0 {name=p7 lab=V_OUT_N}
 C {devices/opin.sym} -360 -510 0 0 {name=p6 lab=V_OUT_P}
-C {devices/lab_pin.sym} -900 -550 0 1 {name=p16 sig_type=std_logic lab=VCC}
+C {devices/lab_pin.sym} -900 -630 0 1 {name=p16 sig_type=std_logic lab=VCC}
 C {devices/simulator_commands_shown.sym} -1010 60 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false
@@ -416,7 +524,7 @@ C {devices/vsource.sym} -1480 -130 0 1 {name=V3 value="0 ac 1 0
 }
 C {devices/lab_pin.sym} -1230 -190 2 0 {name=p18 sig_type=std_logic lab=V_IN_N}
 C {devices/lab_pin.sym} -1440 -90 0 1 {name=p27 sig_type=std_logic lab=VSS}
-C {devices/ammeter.sym} -1480 -990 2 1 {name=Vtot savecurrent=true}
+C {devices/ammeter.sym} -940 -580 0 1 {name=V_ideal savecurrent=true}
 C {devices/lab_pin.sym} -1390 -650 2 0 {name=p14 sig_type=std_logic lab=VSS}
 C {devices/vsource.sym} -1490 -700 0 0 {name=V6 value="0 ac 1 0
 + pulse(1.8 0 2ns 100ps 100ps 500ns 1us 400"
@@ -473,6 +581,52 @@ value=100n
 footprint=1206
 device="ceramic capacitor"}
 C {devices/capa.sym} -430 -410 3 0 {name=C8
+m=1
+value=100n
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_pin.sym} -900 -910 0 1 {name=p13 sig_type=std_logic lab=VSS}
+C {devices/opin.sym} -350 -950 0 0 {name=p15 lab=V_OUT_N_parax}
+C {devices/opin.sym} -350 -1050 0 0 {name=p24 lab=V_OUT_P_parax}
+C {devices/lab_pin.sym} -890 -1170 0 1 {name=p25 sig_type=std_logic lab=VCC}
+C {gilbert_mixer.sym} -870 -1000 0 0 {name=x2
+schematic=gilbert_mixer_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/gilbert_mixer.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/gilbert_mixer.sim.spice]"
+}
+C {devices/lab_pin.sym} -1070 -1030 2 1 {name=p26 sig_type=std_logic lab=LO_P}
+C {devices/lab_pin.sym} -1070 -1010 2 1 {name=p28 sig_type=std_logic lab=LO_N}
+C {devices/ammeter.sym} -930 -1120 0 1 {name=V_ideal1 savecurrent=true}
+C {devices/lab_pin.sym} -1060 -990 2 1 {name=p29 sig_type=std_logic lab=V_IN_P}
+C {devices/lab_pin.sym} -1060 -970 2 1 {name=p30 sig_type=std_logic lab=V_IN_N}
+C {devices/res.sym} -510 -1050 1 1 {name=R5
+value=500
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} -600 -1150 2 0 {name=p31 sig_type=std_logic lab=VSS}
+C {devices/res.sym} -510 -950 1 0 {name=R6
+value=500
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} -600 -850 0 1 {name=p32 sig_type=std_logic lab=VSS}
+C {devices/capa.sym} -600 -920 0 0 {name=C2
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -600 -1080 2 1 {name=C4
+m=1
+value=5p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -420 -1050 3 0 {name=C9
+m=1
+value=100n
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} -420 -950 3 0 {name=C10
 m=1
 value=100n
 footprint=1206

@@ -95,8 +95,6 @@ N 160 -280 160 -260 {
 lab=VDD}
 N 160 -280 180 -280 {
 lab=VDD}
-N 220 110 240 110 {
-lab=VSS}
 N 440 -10 480 -10 {
 lab=NET_M6_DRAIN}
 N 40 -10 80 -10 {
@@ -136,11 +134,6 @@ lab=OUT_P}
 N 560 -180 620 -180 {
 lab=OUT_N}
 C {devices/ipin.sym} -130 30 0 0 {name=p4 lab=LO_P}
-C {sky130_fd_pr/res_high_po_0p35.sym} 260 110 0 0 {name=R3
-L=0.5
-model=res_high_po_0p35
-spiceprefix=X
-mult=35}
 C {devices/ipin.sym} 560 30 0 1 {name=p15 lab=LO_N}
 C {devices/ipin.sym} 1060 -90 0 1 {name=p17 lab=IN_N}
 C {devices/opin.sym} 620 -260 3 0 {name=p3 lab=OUT_N}
@@ -242,7 +235,6 @@ C {devices/lab_pin.sym} 470 -90 0 0 {name=p9 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 380 -90 0 1 {name=p10 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 400 30 0 0 {name=p8 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 120 30 0 1 {name=p11 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 220 110 0 0 {name=p12 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -60 -230 2 1 {name=p14 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 270 160 0 1 {name=p20 sig_type=std_logic lab=VSS}
 C {devices/ipin.sym} -610 -90 0 0 {name=p16 lab=IN_P}
@@ -255,4 +247,9 @@ C {sky130_fd_pr/res_xhigh_po_0p35.sym} -20 -230 0 0 {name=R2
 L=1.35
 model=res_xhigh_po_0p35
 spiceprefix=X
+mult=1}
+C {sky130_fd_pr/res_generic_l1.sym} 260 110 0 0 {name=R3
+W=0.4
+L=1
+model=res_generic_l1
 mult=1}
