@@ -39,13 +39,14 @@ module mixer_control (
         end
     end
 
-    // int_lo_settings 3'b000 => clk freq is diveded by 2
-    // int_lo_settings 3'b001 => clk freq is diveded by 2
-    // int_lo_settings 3'b010 => clk freq is diveded by 4
-    // int_lo_settings 3'b011 => clk freq is diveded by 5
-    // int_lo_settings 3'b100 => clk freq is diveded by 6
-    // int_lo_settings 3'b110 => clk freq is diveded by 7
-    // int_lo_settings 3'b111 => clk freq is diveded by 8
+    // int_lo_settings 3'b000 => LO freq is 50.0% of clk frequency
+    // int_lo_settings 3'b001 => LO freq is 50.0% of clk frequency
+    // int_lo_settings 3'b010 => LO freq is 25.0% of clk frequency
+    // int_lo_settings 3'b011 => LO freq is 16.6% of clk frequency
+    // int_lo_settings 3'b100 => LO freq is 12.5% of clk frequency
+    // int_lo_settings 3'b101 => LO freq is 10.0% of clk frequency
+    // int_lo_settings 3'b110 => LO freq is  8.3% of clk frequency
+    // int_lo_settings 3'b111 => LO freq is  7.1% of clk frequency
 
     // internal LO generation
     always @(posedge clk) begin
