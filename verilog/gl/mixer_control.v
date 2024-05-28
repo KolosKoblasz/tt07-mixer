@@ -6,7 +6,7 @@ module mixer_control (VGND,
     ext_lo_p,
     lo_n,
     lo_p,
-    n_rst,
+    rst_n,
     int_lo_settings);
  input VGND;
  input VPWR;
@@ -16,7 +16,7 @@ module mixer_control (VGND,
  input ext_lo_p;
  output lo_n;
  output lo_p;
- input n_rst;
+ input rst_n;
  input [2:0] int_lo_settings;
 
  wire _00_;
@@ -2614,7 +2614,7 @@ module mixer_control (VGND,
     .VPB(VPWR),
     .VPWR(VPWR),
     .X(net6));
- sky130_fd_sc_hd__clkbuf_1 input7 (.A(n_rst),
+ sky130_fd_sc_hd__clkbuf_1 input7 (.A(rst_n),
     .VGND(VGND),
     .VNB(VGND),
     .VPB(VPWR),

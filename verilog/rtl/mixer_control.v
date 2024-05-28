@@ -4,7 +4,7 @@
 
 module mixer_control (
     input  wire          clk,                // expect a 10M clock
-    input  wire          n_rst,
+    input  wire          rst_n,
     input  wire          ext_lo_en,          // if this is high, then LO signal comes from ui_in[]
     input  wire          ext_lo_n,           // external LO diff negative line
     input  wire          ext_lo_p,           // external LO diff positive line
@@ -30,8 +30,8 @@ module mixer_control (
 
 
     // reset handling
-    always @(posedge clk or posedge n_rst) begin
-        if(n_rst) begin
+    always @(posedge clk or posedge rst_n) begin
+        if(rst_n) begin
             rst     <= 1'b0;
         end
         else begin

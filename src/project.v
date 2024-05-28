@@ -19,12 +19,16 @@ module tt_um_KolosKoblasz_mixer (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+    //assign uo_out  = 8'h00;
+    //assign uio_out = 8'h00;
+    //assign uio_oe  = 8'h00;
+
     wire mc_gm_lo_n;
     wire mc_gm_lo_p;
 
     mixer_control mixer_control_inst(
         .clk            (clk),
-        .n_rst          (n_rst),
+        .rst_n          (rst_n),
         .ext_lo_en      (ui_in[0]),
         .ext_lo_n       (ui_in[1]),
         .ext_lo_p       (ui_in[2]),

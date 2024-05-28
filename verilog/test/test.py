@@ -5,9 +5,9 @@ import random
 
 async def reset(dut):
     dut._log.info("reset")
-    dut.n_rst.value = 0
+    dut.rst_n.value = 0
     await ClockCycles(dut.clk, 10)
-    dut.n_rst.value = 1
+    dut.rst_n.value = 1
 
 def check_output(dut):
     assert dut.ext_lo_n.value != dut.ext_lo_p.value
@@ -49,6 +49,7 @@ async def test(dut):
     for i in range(0,30):
         dut.int_lo_settings.value =  random.randrange(0,8)
         dut._log.info(f"int_lo_settings is: {dut.int_lo_settings.value} ignored." )
+
         for ext_clock_cycle in range(2):
             ext_lo = ~ext_lo
             dut.ext_lo_n.value = ~ext_lo
