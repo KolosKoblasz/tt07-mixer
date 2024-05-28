@@ -46,8 +46,8 @@ module tt_um_KolosKoblasz_mixer (
         .in_p   (ua[1]),
         .lo_n   (mc_gm_lo_n),
         .lo_p   (mc_gm_lo_p),
-        .vdd    (VPWR),
-        .vss    (VGND)
+        .VDD    (VPWR),
+        .VSS    (VGND)
         );
 
 endmodule
