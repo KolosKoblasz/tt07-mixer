@@ -1,0 +1,14 @@
+** sch_path: /home/kolos/projects/tt07-mixer/xschem/gilbert_mixer.sch
+.subckt gilbert_mixer VSS VDD OUT_N OUT_P LO_N LO_P IN_N IN_P
+*.PININFO LO_P:I LO_N:I IN_N:I OUT_N:O OUT_P:O VDD:B VSS:B IN_P:I
+XM2 OUT_P IN_N NET_M6_DRAIN VSS sky130_fd_pr__nfet_01v8 L=0.38 W=3.6 nf=2 m=1
+XM4 OUT_N IN_N NET_M5_DRAIN VSS sky130_fd_pr__nfet_01v8 L=0.38 W=3.6 nf=2 m=1
+XM6 NET_M6_DRAIN LO_N NET_R3 VSS sky130_fd_pr__nfet_01v8 L=0.38 W=3.6 nf=2 m=1
+XM1 OUT_N IN_P NET_M6_DRAIN VSS sky130_fd_pr__nfet_01v8 L=0.38 W=3.6 nf=2 m=1
+XM3 OUT_P IN_P NET_M5_DRAIN VSS sky130_fd_pr__nfet_01v8 L=0.38 W=3.6 nf=2 m=1
+XM5 NET_M5_DRAIN LO_P NET_R3 VSS sky130_fd_pr__nfet_01v8 L=0.38 W=3.6 nf=2 m=1
+XR1 OUT_N VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=1.35 mult=1 m=1
+XR2 OUT_P VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=1.35 mult=1 m=1
+R3 VSS NET_R3 sky130_fd_pr__res_generic_l1 W=0.4 L=1 m=1
+.ends
+.end
