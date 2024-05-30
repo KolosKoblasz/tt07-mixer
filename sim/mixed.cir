@@ -13,11 +13,11 @@ adut [ clk rst_n ext_lo_en ext_lo_n ext_lo_p int_lo_s2 int_lo_s1 int_lo_s0 ] [lo
 * connect the driver to the mixer
 * had to edit spice exported by xschem to add the subckt and ends
 
-.include "../xschem/simulation/gilbert_mixer.spice"
-*.include "../mag/gilbert_mixer.spice"
+*.include "../xschem/simulation/gilbert_mixer.spice"
+.include "../mag/gilbert_mixer.sim.spice"
 
-*xgilbert_mixer lo_n lo_p in_n in_p out_n out_p vss vdd gilbert_mixer
-xgilbert_mixer 0 vcc out_n out_p lo_n lo_p in_n in_p gilbert_mixer
+*xgilbert_mixer      0 vcc out_n out_p lo_n lo_p in_n in_p gilbert_mixer
+xgilbert_mixer_parax 0 vcc out_n out_p lo_n lo_p in_n in_p gilbert_mixer_parax
 
 * simulate tt output path
 R1 out_n pin_out_n 500
