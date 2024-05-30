@@ -18,4 +18,4 @@ Send analog signal to the input ports and measure the output ports. Also apply e
 
 ## External hardware
 
-Since the user have to bias the in_n and in_p ports with 900-950mV and apply a differential signal in the range of 20mV peak-to-peak I would say a custom interface PCB is needed to use the mixer. TO DO.
+Since the user have to bias the in_n and in_p ports with 900-950mV and apply a differential signal in the range of 20mV peak-to-peak I would say a custom interface PCB is needed to use the mixer. TO DO later.
