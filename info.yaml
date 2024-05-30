@@ -2,33 +2,33 @@
 project:
   title:        "Gilbert Mixer"      # Project title
   author:       "Kolos Koblasz"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  discord:      "kolos_koblasz#3383"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Gilbert Cell mixer for up and down conversion"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     100000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x2"          # Valid values: 1x1 (digital only), 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # How many analog pins does your project use?
-  analog_pins: 2        # Valid values: 0 to 6
+  analog_pins: 4        # Valid values: 0 to 6
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_KolosKoblasz_mixer"
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
-  source_files:        
+  source_files:
     - "project.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
+  ui[0]: "ext_lo_en"
+  ui[1]: "ext_lo_n"
+  ui[2]: "ext_lo_p"
+  ui[3]: "int_lo_settings[0]"
+  ui[4]: "int_lo_settings[1]"
+  ui[5]: "int_lo_settings[2]"
   ui[6]: ""
   ui[7]: ""
 
@@ -53,10 +53,10 @@ pinout:
   uio[7]: ""
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-  ua[0]: ""
-  ua[1]: ""
-  ua[2]: ""
-  ua[3]: ""
+  ua[0]: "in_n"
+  ua[1]: "in_p"
+  ua[2]: "out_p"
+  ua[3]: "out_n"
   ua[4]: ""
   ua[5]: ""
 
