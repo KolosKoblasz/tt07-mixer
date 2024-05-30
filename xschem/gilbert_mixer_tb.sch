@@ -520,7 +520,7 @@ C {devices/lab_pin.sym} -1390 -620 2 0 {name=p21 sig_type=std_logic lab=LO_N}
 C {devices/lab_pin.sym} -1080 -490 2 1 {name=p22 sig_type=std_logic lab=LO_P}
 C {devices/lab_pin.sym} -1080 -470 2 1 {name=p23 sig_type=std_logic lab=LO_N}
 C {devices/vsource.sym} -1480 -130 0 1 {name=V3 value="0 ac 1 0
-+ sin(950M 100m 10k 0 0 180)"
++ sin(950m 100m 10k 0 0 180)"
 }
 C {devices/lab_pin.sym} -1230 -190 2 0 {name=p18 sig_type=std_logic lab=V_IN_N}
 C {devices/lab_pin.sym} -1440 -90 0 1 {name=p27 sig_type=std_logic lab=VSS}

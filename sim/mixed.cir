@@ -1,0 +1,61 @@
+Simulation of a gilbert_mixer with Verilator and d_cosim
+
+.lib /home/kolos/.volare/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+* https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/examples/xspice/verilator/
+
+* The digital portion of the circuit is specified in compiled Verilog.
+* list the inputs and outputs
+adut [ clk rst_n ext_lo_en ext_lo_n ext_lo_p int_lo_s2 int_lo_s1 int_lo_s0 ] [lo_n lo_p] null dut
+.model dut d_cosim simulation="./mixer_control.so"
+
+* connect the driver to the mixer
+* had to edit spice exported by xschem to add the subckt and ends
+
+.include "../xschem/simulation/gilbert_mixer.spice"
+*.include "../mag/gilbert_mixer.spice"
+
+*xgilbert_mixer lo_n lo_p in_n in_p out_n out_p vss vdd gilbert_mixer
+xgilbert_mixer 0 vcc out_n out_p lo_n lo_p in_n in_p gilbert_mixer
+
+* simulate tt output path
+R1 out_n pin_out_n 500
+C1 out_n 0 5p
+R2 out_p pin_out_p 500
+C2 out_p 0 5p
+
+
+**** End of the ADC and its subcircuits.  Begin test circuit ****
+
+.param vcc=1.8
+vcc vcc 0 {vcc}
+
+
+* Digital clock signal
+
+aclock 0 clk clock
+.model clock d_osc cntl_array=[-1 1] freq_array=[5Meg 5Meg]
+
+* reset signal
+
+Vreset rst_n 0 PULSE vcc 0 10n 20p 20p 1u 500u
+
+Vin_n in_n 0 ac 1 0 sin(900m 10m 10k 0 0 0)
+Vin_p in_p 0 ac 1 0 sin(900m 10m 10k 0 0 180)
+
+Vint_lo_s0 int_lo_s0 0 PULSE 1.9 0.1 100u 20p 20p 100u 500u
+Vint_lo_s1 int_lo_s1 0 PULSE 2.0 0.2 200u 20p 20p 100u 500u
+Vint_lo_s2 int_lo_s2 0 PULSE 2.1 0.3 300u 20p 20p 100u 500u
+
+.control
+tran 1n 400u
+plot pin_out_n pin_out_p
+plot lo_n lo_p
+plot in_n in_p
+plot out_n out_p int_lo_s0 int_lo_s1 int_lo_s2
+plot in_n in_p out_n out_p
+plot clk rst_n
+
+.endc
+.end
