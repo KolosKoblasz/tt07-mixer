@@ -5,11 +5,11 @@ K {}
 V {}
 S {}
 E {}
-T {Aproximately 960mV 
-Gate bias is needed} 720 -250 0 0 0.4 0.4 {}
+T {Aproximately 950mV 
+Gate bias is needed in simulation. Lab result:1200mV} 720 -250 0 0 0.4 0.4 {}
 T {Power Supply - 1.8V} 150 -450 0 0 0.4 0.4 {}
 T {Aproximately 950mV 
-Gate bias is needed} -270 -250 0 1 0.4 0.4 {}
+Gate bias is needed in simulation. Lab result:1200mV} -270 -250 0 1 0.4 0.4 {}
 T {IN_P/N ports expect the RF or IF signal
 depending on if the circuit is used for DOWN or UP conversion.
 
